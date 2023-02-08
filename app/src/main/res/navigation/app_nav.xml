@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/stock_holding_fragment">
+
+    <fragment
+        android:id="@+id/stock_holding_fragment"
+        android:name=".holdings.view.StockHoldingFragment"
+        android:label="@string/stock_holding_page_title"
+        tools:layout="@layout/fragment_stock_holding" />
+</navigation>

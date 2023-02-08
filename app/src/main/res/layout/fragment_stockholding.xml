@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.stockholding.holdings.model.StockHoldingsModel" />
+
+        <import type="com.example.stockholding.utility.Utility" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/material_grey_600"
+        tools:context=".holdings.view.StockHoldingFragment">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottomlayout"
+            android:layout_alignParentTop="true">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/holding_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottomlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/cv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Current Value: "
+                android:textColor="@color/material_grey_600"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cv_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:text="@{Utility.INSTANCE.appendRupeeSymbol(String.valueOf(data.summary.totalCurrentValue))}"
+                android:textColor="@color/material_grey_600"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/ti_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_label"
+                android:layout_alignParentLeft="true"
+                android:text="Total Investment: "
+                android:textColor="@color/material_grey_600"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ti_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_label"
+                android:layout_alignParentRight="true"
+                android:text="@{Utility.INSTANCE.appendRupeeSymbol(String.valueOf(data.summary.totalInvestedValue))}"
+                android:textColor="@color/material_grey_600"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/todays_pnl_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ti_label"
+                android:layout_alignParentLeft="true"
+                android:text="Today's Profit &amp; Loss: "
+                android:textColor="@color/material_grey_600"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/todays_pnl_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ti_label"
+                android:layout_alignParentRight="true"
+                android:text="@{Utility.INSTANCE.appendRupeeSymbol(String.valueOf(data.summary.todaysProfit))}"
+                android:textColor="@color/material_grey_600"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/pnl_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/todays_pnl_label"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="16dp"
+                android:text="Today's Profit &amp; Loss: "
+                android:textColor="@color/material_grey_600"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pnl_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/todays_pnl_label"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="16dp"
+                android:text="@{Utility.INSTANCE.appendRupeeSymbol(String.valueOf(data.summary.totalProfit))}"
+                android:textColor="@color/material_grey_600"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

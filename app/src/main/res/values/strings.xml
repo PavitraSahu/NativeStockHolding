@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">StockHolding</string>
+
+    <string name="stock_holding_page_title">Upstox Holding</string>
 </resources>

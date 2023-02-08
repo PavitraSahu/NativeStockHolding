@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.stockholding.holdings.model.Data" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:id="@+id/symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.symbol}"
+            android:textStyle="bold"
+            android:textColor="@color/material_grey_600"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.quantity)}"
+            android:textColor="@color/material_grey_600"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/symbol"/>
+
+        <TextView
+            android:id="@+id/ltp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/material_grey_600"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/pnl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/material_grey_600"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/ltp"/>
+
+    </RelativeLayout>
+
+        <View
+            android:id="@+id/dividerview"
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/material_grey_300"/>
+
+    </LinearLayout>
+
+</layout>

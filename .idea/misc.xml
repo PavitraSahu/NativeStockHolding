@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidProjects/StockHolding/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/StockHolding/app/src/main/res/layout/fragment_stockholding.xml" value="0.14492753623188406" />
+        <entry key="..\:/AndroidProjects/StockHolding/app/src/main/res/layout/recyclerview_stockholding_item.xml" value="0.15172101449275363" />
       </map>
     </option>
   </component>
